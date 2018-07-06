@@ -10,14 +10,25 @@
    - npm i vue-template-compiler
    - npm i style-loader
    - npm i url-loader file-loader
-   - npm i stylus-loader stylus
-
 
    
- - 3 配置项目的webpack(npm run dev 不会压缩，npm run build会压缩)
-   - "build": "webpack --mode production --config webpack.config.js",
-   - "dev": "webpack --mode development --config webpack.config.js"
-   
- - 4 css预处理器
-   
+ - 3 css预处理器
+    - npm i stylus-loader stylus
+    
+ - 5 webpack dev-server
+    - npm i webpack-dev-server
+    - npm i cross-env
+    
+ - 5 配置项目的webpack(npm run dev 不会压缩，npm run build会压缩)
+    - "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    - "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    - "build": "webpack --mode production --config webpack.config.js",
+    - "dev": "webpack-dev-server  --mode development --config webpack.config.js"
+ 
+ - 6 生成html
+    - npm i html-webpack-plugin
+    
+ - 7 淘宝镜像   
+    - npm install -g cnpm --registry=https://registry.npm.taobao.org
+    - cnpm install express
    
