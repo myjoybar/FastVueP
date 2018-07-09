@@ -40,7 +40,7 @@
    - Vue并不支持JSX,vue 文件写html，js，css很方便
    - Vue2.0 render方法：数据改变时重新渲染
  
- - 9 Vue
+- 9 Vue
    -传统通过js操作html
    - 双向数据绑定 
    - 组件化
@@ -50,6 +50,14 @@
    - 生命周期
    - computed
    
- - 10 npm install 初始化
+- 10 npm install 初始化
+ 
+- 11 开发-配置vue的jsx写法以及postcss
+   - npm i postcss-loader autoprefixer babel-loader babel-core 
+   - sudo npm i babel-preset-env babel-plugin-transform-vue-jsx
+   - sudo npm i babel-helper-vue-jsx-merge-props
+   - autoprefixer 处理优化css
+   - babel 支持jsx代码
+   
 
   
