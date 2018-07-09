@@ -12,23 +12,44 @@
    - npm i url-loader file-loader
 
    
- - 3 css预处理器
-    - npm i stylus-loader stylus
+- 3 css预处理器
+   - npm i stylus-loader stylus
     
- - 5 webpack dev-server
-    - npm i webpack-dev-server
-    - npm i cross-env
+- 5 webpack dev-server
+   - npm i webpack-dev-server -g
+   - npm i cross-env
     
- - 5 配置项目的webpack(npm run dev 不会压缩，npm run build会压缩)
-    - "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    - "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
-    - "build": "webpack --mode production --config webpack.config.js",
-    - "dev": "webpack-dev-server  --mode development --config webpack.config.js"
+- 5 配置项目的webpack(npm run dev 不会压缩，npm run build会压缩)
+   - "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+   - "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
+   - "build": "webpack --mode production --config webpack.config.js",
+   - "dev": "webpack-dev-server  --mode development --config webpack.config.js"
  
- - 6 生成html
-    - npm i html-webpack-plugin
+- 6 生成html
+   - npm i html-webpack-plugin
     
- - 7 淘宝镜像   
-    - npm install -g cnpm --registry=https://registry.npm.taobao.org
-    - cnpm install express
+- 7 淘宝镜像   
+   - npm install -g cnpm --registry=https://registry.npm.taobao.org
+   - cnpm install express
+    
+- 8 Vue 数据绑定，组件化框架  
+   - 组件：html js，css
+   - React 使用JSX处理书写html，动态render html
+   - React 使用JSX 来替代常规的 JavaScript
+   - JSX 是一个看起来很像 XML 的 JavaScript 语法扩展。
+   - Vue并不支持JSX,vue 文件写html，js，css很方便
+   - Vue2.0 render方法：数据改变时重新渲染
+ 
+ - 9 Vue
+   -传统通过js操作html
+   - 双向数据绑定 
+   - 组件化
+   - .vue文件的开发使用
+   - .vue2.0 虚拟dom
+   - API
+   - 生命周期
+   - computed
    
+ - 10 npm install 初始化
+
+  
