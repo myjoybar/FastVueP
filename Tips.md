@@ -56,6 +56,7 @@
    - npm i postcss-loader autoprefixer babel-loader babel-core 
    - sudo npm i babel-preset-env babel-plugin-transform-vue-jsx
    - sudo npm i babel-helper-vue-jsx-merge-props
+   - sudo npm i babel-plugin-syntax-jsx
    - autoprefixer 处理优化css
    - babel 支持jsx代码
    

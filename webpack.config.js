@@ -20,8 +20,8 @@ const config = {
                 loader: 'vue-loader'
             },
             {
-                test: /\.jsx/,
-                loader: 'babel-loader'
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
             },
             {
                 test: /\.css$/,
