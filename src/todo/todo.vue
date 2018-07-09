@@ -7,8 +7,17 @@
                placeholder="接下来要做什么?"
                @keyup.enter="addTodo"
         >
-        <Item :todo="toto"></Item>
-        <Tabs :filter="filter"></Tabs>
+        <Item :todo="todo"
+              v-for="todo in filteredTodos"
+              :key="todo.id"
+              @del="deleteTodo">
+
+
+        </Item>
+        <Tabs :filter="filter"
+              :todos="todos"
+              @toggle="toggleFilter"
+              @clearAllCompleted="clearAllCompleted"></Tabs>
     </section>
 </template>
 
@@ -16,21 +25,49 @@
     import Item from './item.vue';
     import Tabs from './tabs.vue';
 
+    let id = 0;
     export default {
-        data(){
-            return{
-                toto:{
-                    id:0,
-                    content:'This is todo',
-                    completed:false,
-                },
-                filter:'all'
+        data() {
+            return {
+                todos: [],
+                filter: 'all'
             }
         },
         // 声明组件，之后便可以使用组件标签
         components: {
             Item,
             Tabs,
+        },
+        // 计算
+        computed: {
+            filteredTodos() {
+                if (this.filter === 'all') {
+                    return this.todos;
+                }
+                const completed = this.filter === 'completed';
+                // 将todos数组中，completed为true的值过滤出来，并返回一个新数组
+                return this.todos.filter(todo => completed === todo.completed);
+            }
+        },
+        methods: {
+            addTodo(e) {
+                this.todos.unshift({
+                    id: id++,
+                    content: e.target.value.trim(),
+                    completed: false,
+                })
+                e.target.value = ''
+
+            }, deleteTodo(id) {
+                this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
+            },
+            toggleFilter(state) {
+                this.filter = state;
+            },
+            clearAllCompleted() {
+                // 给todos赋一个新的值（即todo.completed为false的值）
+                this.todos = this.todos.filter(todo => todo.completed === false)
+            }
         }
     }
 
@@ -43,6 +80,7 @@
         margin 0 auto
         box-shadow 0 0 5px #666
     }
+
     .add-input {
         position: relative;
         margin: 0;
