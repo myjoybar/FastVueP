@@ -5,13 +5,15 @@ const {VueLoaderPlugin} = require('vue-loader');
 const isDev = process.env.NODE_ENV === 'development'
 const HTMLPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+// const ExtractPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const config = {
     target: "web",
     // entry: path.join(__dirname, "src/index.js'"),
     entry: '/Users/joybar/Documents/WorkSpaces/WebStorm/FastVueP/src/index.js',
     output: {
         path: BUILD_PATH, // 设置输出目录
-        filename: 'bundle.js', // 输出文件名 bundle.js
+        filename: 'build.[hash:8].js',  // 输出的文件名
     },
     module: {
         rules: [
@@ -72,6 +74,20 @@ const config = {
     ]
 }
 if (isDev) {
+    config.module.rules.push({
+        test: /\.styl/,
+        use: [
+            'style-loader',
+            'css-loader',
+            {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: true
+                }
+            },
+            'stylus-loader'
+        ]
+    });
     config.devtool = '#cheap-module-eval-source-map'//代码调试,webpack 官方推荐
     config.devSerer = {
         port: '8000',
@@ -88,5 +104,32 @@ if (isDev) {
         new webpack.NoEmitonerrorsPlugin()
     )
 
+}else{
+    config.output.filename = '[name].[chunkhash:8].js';
+    config.module.rules.push({
+        test: /\.((sa|sc|c)ss)|styl$/,
+        use: [
+             MiniCssExtractPlugin.loader,
+            'css-loader',
+            {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: true
+                }
+            },
+            'stylus-loader'
+        ]
+    });
+
+    config.plugins.push(
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        })
+    );
+
 }
+
 module.exports = config

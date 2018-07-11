@@ -30,7 +30,7 @@
     
 - 7 淘宝镜像   
    - npm install -g cnpm --registry=https://registry.npm.taobao.org
-   - cnpm install express
+   - sudo cnpm install express
     
 - 8 Vue 数据绑定，组件化框架  
    - 组件：html js，css
@@ -60,5 +60,7 @@
    - autoprefixer 处理优化css
    - babel 支持jsx代码
    
-
-  
+- 12 webpack 配置优化
+   - npm i extract-text-webpack-plugin （css 单独分离打包）
+   - npm install extract-text-webpack-plugin@next （extract-text-webpack-plugin目前还没有webpack4版本）
+   - npm install --save-dev mini-css-extract-plugin
