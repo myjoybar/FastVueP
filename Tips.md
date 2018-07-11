@@ -64,3 +64,18 @@
    - npm i extract-text-webpack-plugin （css 单独分离打包）
    - npm install extract-text-webpack-plugin@next （extract-text-webpack-plugin目前还没有webpack4版本）
    - npm install --save-dev mini-css-extract-plugin
+   
+- 13 webpack 区分打包类库代码
+   - 框架代码稳定性高，业务代码经常变。
+   
+- 14 总结
+   - 1 现在的前端开发都会用webpack体系
+       - 写的代码80%都是js代码，html，css 都是包含在js里面 
+       - webpack强大的loader和plugin体系，帮助文件打包合并压缩，静态资源+hash后缀来提供浏览器长缓存，并且合理的更新浏览器长缓存
+   - 2 现在的前端开发基本离不开webpack：学习vue，不仅仅是学习vue的API，更是学习整个生态环境，你要学习vue-router，要学习vue的组件开发，学习如何配置vue配置webpack的流程，然后把这个项目跑起来。
+   - 3. 理解vue的重点不是它的api和指令，而是整个渲染的过程：
+       - 1. 学习JSX能够更好的理解vue
+       - 2. jsx有一个render方法，每次调用render方法，才能得到我们真正想要的结果，vue的template部分，最终也是用vue-loader去解析成一个render方法，然后放到对象里面去，每次vue里面有数据更新，它都会去重新调用render方法，生成一个新的html结构，最终插入到dom里面，再显示出来。
+   - 4. 眼界一定要放开，要广泛学习前端各种知识，完善知识体系。
+   
+   
