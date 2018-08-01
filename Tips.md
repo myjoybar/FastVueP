@@ -3,6 +3,7 @@
    - sudo npm install webpack-cli -g
    
 - 2 开始构建NPM项目-> package.json
+   - npm install
    - npm init  
    - npm i webpack
    - npm i vue vue-loader
@@ -10,7 +11,6 @@
    - npm i vue-template-compiler
    - npm i style-loader
    - npm i url-loader file-loader
-
    
 - 3 css预处理器
    - npm i stylus-loader stylus
@@ -77,5 +77,10 @@
        - 1. 学习JSX能够更好的理解vue
        - 2. jsx有一个render方法，每次调用render方法，才能得到我们真正想要的结果，vue的template部分，最终也是用vue-loader去解析成一个render方法，然后放到对象里面去，每次vue里面有数据更新，它都会去重新调用render方法，生成一个新的html结构，最终插入到dom里面，再显示出来。
    - 4. 眼界一定要放开，要广泛学习前端各种知识，完善知识体系。
+
+- 15 vue-router   
+
+   - sudo npm i vue-router  
+   - sudo cnpm install vue-router  
    
    
